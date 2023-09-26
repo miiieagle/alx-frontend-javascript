@@ -1,32 +1,16 @@
-// Function to instantiate variables using const
-function taskFirst() {
-  // Using const to declare variables
-  const firstName = "John";
-  const lastName = "Doe";
-  
-  // Attempting to reassign const variables will result in an error
-  // firstName = "Jane"; // This would throw an error
-  
-  // Output the values of const variables
-  console.log("First Name (const):", firstName);
-  console.log("Last Name (const):", lastName);
+export function getTaskDescription() {
+  const taskDescription = 'I prefer using constants whenever possible.';
+  return taskDescription;
 }
 
-// Function to instantiate variables using let
-function taskNext() {
-  // Using let to declare variables
-  let age = 30;
-  let city = "New York";
-  
-  // Variables declared with let can be reassigned
-  age = 35;
-  city = "Los Angeles";
-  
-  // Output the values of let variables
-  console.log("Age (let):", age);
-  console.log("City (let):", city);
+export function getFallbackMessage() {
+  return 'However, sometimes using let is necessary.';
 }
 
-// Call the functions to demonstrate variable instantiation
-taskFirst();
-taskNext();
+export function getTaskSummary() {
+  let taskSummary = 'For instance, when ';
+  taskSummary += 'the value of a variable needs to be updated.';
+  taskSummary += ' ' + getFallbackMessage();
+
+  return taskSummary;
+}
